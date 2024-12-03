@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
-project(amazing_app)
+project(ac2024)
 
 set(CMAKE_CXX_STANDARD 20)
 
