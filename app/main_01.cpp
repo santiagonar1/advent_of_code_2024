@@ -14,8 +14,16 @@ int main() {
 
     const auto diffs = ac::distance(v1, v2);
 
-    const auto result = std::accumulate(diffs.begin(), diffs.end(), 0);
-    std::cout << "Result part 1: " << result << std::endl;
+    const auto result_part_1 = std::accumulate(diffs.begin(), diffs.end(), 0);
+    std::cout << "Result part 1: " << result_part_1 << std::endl;
+
+    int result_part_2{};
+    for (const auto value : v1) {
+        const auto repetitions = ac::num_repetitions(v2, value);
+        result_part_2 += repetitions * value;
+    }
+
+    std::cout << "Result part 2: " << result_part_2 << std::endl;
 
     return 0;
 }

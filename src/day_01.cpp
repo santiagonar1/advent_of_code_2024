@@ -35,4 +35,18 @@ namespace ac {
         for (size_t i = 0; i < v1.size(); ++i) { result.push_back(std::abs(v1[i] - v2[i])); }
         return result;
     }
+
+    auto num_repetitions(const std::vector<int> &ordered_values, const int value) -> int {
+        int repetitions{};
+        for (const int ordered_value : ordered_values) {
+            if (ordered_value == value) {
+                repetitions++;
+            }
+
+            if (ordered_value > value) {
+                break;
+            }
+        }
+        return repetitions;
+    }
 }// namespace ac
